@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Amadeus Travel: guía informativa de viajes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Encabezado y menú -->
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="#inicio">Amadeus <span>Travel</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="menu">Menú</button>
+      <nav id="menu" aria-label="Principal">
+     <ul>
+  <li><a href="#inicio">Inicio</a></li>
+  <li><a href="#destinos">Destinos</a></li>
+  <li><a href="#cotizador">Cotizador</a></li>
+  <li><a href="#consejos">Consejos para viajar</a></li>
+  <li><a href="#acerca">Acerca de Amadeus</a></li>
+</ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Inicio -->
+    <section id="inicio" class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <h1>Antes de volar, infórmate bien</h1>
+          <p class="lead">Una guía sencilla con destinos para viajeros y consejos para preparar tu vuelo, desde la maleta hasta el aeropuerto.</p>
+          <a class="btn" href="#destinos">Ver destinos</a>
+        </div>
+
+        <aside class="pass" aria-label="Ejemplo de ruta San Salvador a Madrid">
+          <div class="pass-top"><strong>Pase de abordar</strong><span>Ejemplo</span></div>
+          <div class="route">
+            <div>SAL<small>San Salvador</small></div>
+            <span class="plane" aria-hidden="true">✈</span>
+            <div>MAD<small>Madrid</small></div>
+          </div>
+          <dl class="pass-info">
+            <div><dt>Documento</dt><dd>Pasaporte vigente</dd></div>
+            <div><dt>Llegada al aeropuerto</dt><dd>3 horas antes</dd></div>
+            <div><dt>Equipaje</dt><dd>Revisa tu aerolínea</dd></div>
+            <div><dt>Check-in</dt><dd>En línea o en el mostrador</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+        <!-- Países y avión -->
+    <section id="paises" class="paises">
+      <div class="wrap">
+        <h2>Países de nuestras rutas</h2>
+        <div class="cielo" aria-hidden="true">
+          <svg class="avion" viewBox="0 -4 120 56">
+            <path d="M12 22 L4 4 L16 4 L30 18 Z" fill="#c8102e"/>
+            <path d="M8 28 Q10 16 30 14 L96 14 Q116 16 116 25 Q116 34 96 36 L30 36 Q10 36 8 28 Z" fill="#fff" stroke="#0b5563" stroke-width="2"/>
+            <path d="M56 30 L78 46 L90 46 L80 28 Z" fill="#0b5563"/>
+            <path d="M100 18 L112 22 L100 22 Z" fill="#0b5563"/>
+            <g fill="#b9e3e8">
+              <circle cx="38" cy="24" r="2.5"/><circle cx="48" cy="24" r="2.5"/><circle cx="58" cy="24" r="2.5"/>
+              <circle cx="68" cy="24" r="2.5"/><circle cx="78" cy="24" r="2.5"/><circle cx="88" cy="24" r="2.5"/>
+            </g>
+          </svg>
+        </div>
+
+        <div class="banderas">
+          <figure class="bandera">
+            <svg viewBox="0 0 90 60" role="img" aria-label="Bandera de El Salvador">
+              <rect width="90" height="60" fill="#0f47af"/>
+              <rect y="20" width="90" height="20" fill="#fff"/>
+              <circle cx="45" cy="30" r="7" fill="#f2c94c" stroke="#2e7d32" stroke-width="2"/>
+            </svg>
+            <figcaption>El Salvador<small>Origen de los vuelos</small></figcaption>
+          </figure>
+
+          <figure class="bandera">
+            <svg viewBox="0 0 90 60" role="img" aria-label="Bandera de España">
+              <rect width="90" height="60" fill="#c60b1e"/>
+              <rect y="15" width="90" height="30" fill="#ffc400"/>
+            </svg>
+            <figcaption>España<small>Madrid, Barcelona y Sevilla</small></figcaption>
+          </figure>
+
+          <figure class="bandera">
+            <svg viewBox="0 0 90 60" role="img" aria-label="Bandera de México">
+              <rect width="30" height="60" fill="#006847"/>
+              <rect x="30" width="30" height="60" fill="#fff"/>
+              <rect x="60" width="30" height="60" fill="#ce1126"/>
+              <circle cx="45" cy="30" r="6" fill="#8a6d3b"/>
+            </svg>
+            <figcaption>México<small>Ciudad de México y Cancún</small></figcaption>
+          </figure>
+
+          <figure class="bandera">
+            <svg viewBox="0 0 90 60" role="img" aria-label="Bandera de Colombia">
+              <rect width="90" height="30" fill="#fcd116"/>
+              <rect y="30" width="90" height="15" fill="#003893"/>
+              <rect y="45" width="90" height="15" fill="#ce1126"/>
+            </svg>
+            <figcaption>Colombia<small>Cartagena de Indias</small></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <!-- Destinos -->
+    <section id="destinos">
+      <div class="wrap">
+        <h2>Destinos</h2>
+        <p class="lead">Elige un país para ver sus ciudades. Cada tarjeta muestra el código del aeropuerto y la mejor época para viajar.</p>
+
+        <div class="filtros" role="group" aria-label="Filtrar por país">
+          <button class="activo" data-filtro="todos" aria-pressed="true">Todos</button>
+          <button data-filtro="España" aria-pressed="false">España</button>
+          <button data-filtro="México" aria-pressed="false">México</button>
+          <button data-filtro="Colombia" aria-pressed="false">Colombia</button>
+        </div>
+
+        <div class="dest-grid">
+          <article class="dest" data-pais="España">
+            <div class="code">MAD</div>
+            <div class="dest-body">
+              <h3>Madrid, España</h3>
+              <p>Museos como el Prado, el parque del Retiro y una vida de barrio que no para hasta tarde.</p>
+            </div>
+            <p class="season"><strong>Mejor época:</strong> primavera y otoño</p>
+          </article>
+
+          <article class="dest" data-pais="España">
+            <div class="code">BCN</div>
+            <div class="dest-body">
+              <h3>Barcelona, España</h3>
+              <p>Arquitectura de Gaudí, playa urbana y buena comida en pocos kilómetros.</p>
+            </div>
+            <p class="season"><strong>Mejor época:</strong> mayo, junio y septiembre</p>
+          </article>
+
+          <article class="dest" data-pais="España">
+            <div class="code">SVQ</div>
+            <div class="dest-body">
+              <h3>Sevilla, España</h3>
+              <p>El Real Alcázar, la catedral y las calles del barrio de Santa Cruz, con aire andaluz.</p>
+            </div>
+            <p class="season"><strong>Mejor época:</strong> de marzo a mayo (el verano es muy caluroso)</p>
+          </article>
+
+          <article class="dest" data-pais="México">
+            <div class="code">MEX</div>
+            <div class="dest-body">
+              <h3>Ciudad de México, México</h3>
+              <p>Centro histórico, museos y una de las cocinas más variadas de América.</p>
+            </div>
+            <p class="season"><strong>Mejor época:</strong> de noviembre a abril (época seca)</p>
+          </article>
+
+          <article class="dest" data-pais="México">
+            <div class="code">CUN</div>
+            <div class="dest-body">
+              <h3>Cancún, México</h3>
+              <p>Playas del Caribe, arrecifes y excursiones a sitios mayas cercanos.</p>
+            </div>
+            <p class="season"><strong>Mejor época:</strong> de diciembre a abril</p>
+          </article>
+
+          <article class="dest" data-pais="Colombia">
+            <div class="code">CTG</div>
+            <div class="dest-body">
+              <h3>Cartagena de Indias, Colombia</h3>
+              <p>Ciudad amurallada, calles coloniales y atardeceres frente al mar.</p>
+            </div>
+            <p class="season"><strong>Mejor época:</strong> de diciembre a marzo (época seca)</p>
+          </article>
+        </div>
+      </div>
+    </section>
+ 
+        <!-- Cotizador de vuelos -->
+    <section id="cotizador">
+      <div class="wrap">
+        <h2>Cotizador de vuelos</h2>
+        <p class="lead">Elige cuántos boletos quieres por ruta y mira cuánto costaría el total. Los precios son de ejemplo y no se hace ninguna compra.</p>
+
+        <div class="cotizador">
+          <ul class="vuelos">
+            <li class="vuelo" data-precio="850">
+              <div class="ruta"><strong>SAL → MAD</strong><span>San Salvador a Madrid</span></div>
+              <div class="precio">$850</div>
+              <div class="cantidad">
+                <button type="button" class="menos" aria-label="Quitar un boleto a Madrid">−</button>
+                <output>0</output>
+                <button type="button" class="mas" aria-label="Agregar un boleto a Madrid">+</button>
+              </div>
+              <div class="subtotal">$0.00</div>
+            </li>
+
+            <li class="vuelo" data-precio="900">
+              <div class="ruta"><strong>SAL → BCN</strong><span>San Salvador a Barcelona</span></div>
+              <div class="precio">$900</div>
+              <div class="cantidad">
+                <button type="button" class="menos" aria-label="Quitar un boleto a Barcelona">−</button>
+                <output>0</output>
+                <button type="button" class="mas" aria-label="Agregar un boleto a Barcelona">+</button>
+              </div>
+              <div class="subtotal">$0.00</div>
+            </li>
+
+            <li class="vuelo" data-precio="920">
+              <div class="ruta"><strong>SAL → SVQ</strong><span>San Salvador a Sevilla</span></div>
+              <div class="precio">$920</div>
+              <div class="cantidad">
+                <button type="button" class="menos" aria-label="Quitar un boleto a Sevilla">−</button>
+                <output>0</output>
+                <button type="button" class="mas" aria-label="Agregar un boleto a Sevilla">+</button>
+              </div>
+              <div class="subtotal">$0.00</div>
+            </li>
+
+            <li class="vuelo" data-precio="380">
+              <div class="ruta"><strong>SAL → MEX</strong><span>San Salvador a Ciudad de México</span></div>
+              <div class="precio">$380</div>
+              <div class="cantidad">
+                <button type="button" class="menos" aria-label="Quitar un boleto a Ciudad de México">−</button>
+                <output>0</output>
+                <button type="button" class="mas" aria-label="Agregar un boleto a Ciudad de México">+</button>
+              </div>
+              <div class="subtotal">$0.00</div>
+            </li>
+
+            <li class="vuelo" data-precio="420">
+              <div class="ruta"><strong>SAL → CUN</strong><span>San Salvador a Cancún</span></div>
+              <div class="precio">$420</div>
+              <div class="cantidad">
+                <button type="button" class="menos" aria-label="Quitar un boleto a Cancún">−</button>
+                <output>0</output>
+                <button type="button" class="mas" aria-label="Agregar un boleto a Cancún">+</button>
+              </div>
+              <div class="subtotal">$0.00</div>
+            </li>
+
+            <li class="vuelo" data-precio="450">
+              <div class="ruta"><strong>SAL → CTG</strong><span>San Salvador a Cartagena</span></div>
+              <div class="precio">$450</div>
+              <div class="cantidad">
+                <button type="button" class="menos" aria-label="Quitar un boleto a Cartagena">−</button>
+                <output>0</output>
+                <button type="button" class="mas" aria-label="Agregar un boleto a Cartagena">+</button>
+              </div>
+              <div class="subtotal">$0.00</div>
+            </li>
+          </ul>
+
+          <aside class="resumen" aria-live="polite">
+            <h3>Resumen</h3>
+            <p>Boletos: <strong id="totalBoletos">0</strong></p>
+            <p>Total estimado</p>
+            <p class="total" id="totalPagar">$0.00</p>
+            <button type="button" id="comprar" class="btn">Registrar compra</button>
+<button type="button" id="limpiar" class="btn claro">Limpiar</button>
+          </aside>
+        </div>
+      </div>
+    </section>
+        <!-- Mis reservas -->
+    <section id="reservas">
+      <div class="wrap">
+        <h2>Mis reservas</h2>
+        <p class="lead">Aquí se registra cada vuelo que compras y cancelas. Es una simulación: no se hace ningún pago real.</p>
+
+        <div class="tabla-caja">
+          <table>
+            <thead>
+              <tr><th>N.º</th><th>Fecha</th><th>Ruta</th><th>Boletos</th><th>Total</th><th>Estado</th><th>Acción</th></tr>
+            </thead>
+            <tbody id="tabla-reservas"></tbody>
+          </table>
+        </div>
+
+        <p id="sin-reservas">Todavía no hay reservas registradas.</p>
+        <p id="resumen-reservas"></p>
+
+        <div class="acciones">
+          <button type="button" id="descargar" class="btn">Descargar registro (CSV)</button>
+          <button type="button" id="borrar-todo" class="btn-sec">Borrar historial</button>
+        </div>
+      </div>
+    </section>
+    <!-- Consejos para viajar -->
+    <section id="consejos" class="tips">
+      <div class="wrap">
+        <h2>Consejos para viajar</h2>
+        <p class="lead">Lee las respuestas a las dudas más comunes y marca tu lista de equipaje.</p>
+
+        <div class="tips-grid">
+          <div>
+            <details>
+              <summary>¿Qué documentos necesito?</summary>
+              <p>Pasaporte vigente y, según el destino, visa o autorización de entrada. Revisa los requisitos en el sitio oficial del país antes de comprar tu vuelo.</p>
+            </details>
+            <details>
+              <summary>¿Con cuánta anticipación llego al aeropuerto?</summary>
+              <p>En vuelos internacionales, lo común es llegar unas tres horas antes. Así te queda tiempo para el check-in, el equipaje y los controles.</p>
+            </details>
+            <details>
+              <summary>¿Cómo preparo mi equipaje?</summary>
+              <p>Confirma el peso y las medidas permitidas por tu aerolínea. En el equipaje de mano lleva documentos, medicinas, cargador y una muda de ropa.</p>
+            </details>
+            <details>
+              <summary>¿Cuándo conviene comprar el pasaje?</summary>
+              <p>Compara precios en varios días y evita decidir a última hora. Los vuelos en temporada alta suelen costar más.</p>
+            </details>
+            <details>
+              <summary>¿Qué hago si pierden mi maleta?</summary>
+              <p>Reporta el problema en el mostrador de la aerolínea antes de salir del aeropuerto y guarda el comprobante de tu equipaje.</p>
+            </details>
+          </div>
+
+          <div class="lista">
+            <h3>Lista de equipaje</h3>
+            <ul id="lista">
+              <li><label><input type="checkbox"> Pasaporte vigente</label></li>
+              <li><label><input type="checkbox"> Pasaje o código de reserva</label></li>
+              <li><label><input type="checkbox"> Copias de tus documentos</label></li>
+              <li><label><input type="checkbox"> Seguro de viaje</label></li>
+              <li><label><input type="checkbox"> Cargador y batería externa</label></li>
+              <li><label><input type="checkbox"> Medicinas personales</label></li>
+              <li><label><input type="checkbox"> Ropa para el clima del destino</label></li>
+              <li><label><input type="checkbox"> Artículos de aseo en envases pequeños</label></li>
+            </ul>
+            <p id="progreso" aria-live="polite">0 de 8 listos</p>
+            <div class="barra"><span id="relleno"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Acerca de Amadeus -->
+    <section id="acerca">
+      <div class="wrap">
+        <h2>Acerca de Amadeus</h2>
+        <p class="lead">Amadeus es una empresa española de tecnología para el sector de los viajes, con sede central en Madrid. No es una aerolínea: crea los sistemas que conectan a aerolíneas, hoteles y otros proveedores con las agencias de viajes.</p>
+
+        <h3 class="subtitulo">Qué hace</h3>
+        <div class="que-hace">
+          <article>
+            <h4>Aerolíneas y aeropuertos</h4>
+            <p>Software para gestionar reservas, inventario de asientos y el control de salidas de los vuelos.</p>
+          </article>
+          <article>
+            <h4>Agencias de viajes</h4>
+            <p>Un sistema de distribución global que permite buscar precios, reservar y emitir boletos en tiempo real.</p>
+          </article>
+          <article>
+            <h4>Hoteles y otros servicios</h4>
+            <p>Soluciones tecnológicas para hoteles, trenes y alquiler de autos, entre otros proveedores de viajes.</p>
+          </article>
+        </div>
+
+        <h3 class="subtitulo">Su historia</h3>
+        <ol class="linea">
+          <li><strong>1987</strong> Air France, Iberia, Lufthansa y SAS fundan Amadeus en Madrid.</li>
+          <li><strong>1999</strong> La empresa sale a bolsa y empieza a cotizar en París, Fráncfort y Madrid.</li>
+          <li><strong>Hoy</strong> Mantiene su sede en Madrid, el desarrollo de productos en Sophia Antipolis (Francia) y un centro de datos en Erding (Alemania).</li>
+        </ol>
+
+        <p class="notice">Este sitio es informativo y no oficial. Las compras y reservas son una simulación: no se hacen pagos reales y no pertenece a Amadeus.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Amadeus Travel: guía informativa de viajes. Sitio informativo no oficial.</p>
+    </div>
+  </footer>
+
+    <a href="#inicio" class="subir" aria-label="Volver arriba">↑</a>
+  <script src="script.js"></script>
+</body>
+</html>

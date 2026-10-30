@@ -1,0 +1,226 @@
+/* ===== Colores y base ===== */
+ :root {
+  --navy: #0b5563;
+  --ink: #16282c;
+  --sky: #e4f5f3;
+  --white: #ffffff;
+  --red: #cf4326;
+  --yellow: #f6b73c;
+  --line: #bfe0db;
+  --muted: #456066;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--sky);
+}
+h1, h2, h3, h4, .brand, nav, .btn, summary, dt, .code, .route, button, .linea strong {
+  font-family: "Archivo", Arial, sans-serif;
+}
+h1, h2, h3, h4 { color: var(--navy); line-height: 1.15; margin: 0 0 .75rem; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+
+.wrap { max-width: 68rem; margin: 0 auto; padding: 0 1.25rem; }
+section { padding: 3.5rem 0; }
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 800; }
+.lead { max-width: 40rem; color: var(--muted); font-size: 1.15rem; }
+
+/* ===== Encabezado ===== */
+.site-header { background: var(--navy); color: var(--white); position: sticky; top: 0; z-index: 10; }
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding-top: .9rem; padding-bottom: .9rem; }
+.brand { font-weight: 800; font-size: 1.35rem; text-decoration: none; }
+.brand span { color: var(--yellow); }
+nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: .4rem 1.5rem; margin: 0; padding: 0; font-weight: 600; font-size: .95rem; }
+nav a { text-decoration: none; padding: .25rem 0; border-bottom: 2px solid transparent; }
+nav a:hover { border-bottom-color: var(--yellow); }
+.nav-toggle { display: none; background: transparent; color: var(--white); border: 1px solid var(--white); border-radius: 4px; padding: .4rem .9rem; font-size: .95rem; font-weight: 600; cursor: pointer; }
+
+/* ===== Inicio ===== */
+.hero { padding: 4.5rem 0; }
+.hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 3rem; align-items: center; }
+h1 { font-size: clamp(2.3rem, 5.5vw, 3.8rem); font-weight: 800; }
+.btn { display: inline-block; margin-top: 1rem; padding: .8rem 1.5rem; background: var(--red); color: var(--white); font-weight: 600; text-decoration: none; border-radius: 4px; }
+.btn:hover { background: #a60d26; }
+
+.pass { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 14px 32px rgba(18, 48, 77, .18); border-top: 8px solid var(--yellow); }
+.pass-top { display: flex; justify-content: space-between; background: var(--navy); color: var(--white); padding: .9rem 1.5rem; font-size: .95rem; }
+.route { display: flex; justify-content: space-between; align-items: center; padding: 1.6rem 1.5rem 1.2rem; font-size: 3.2rem; font-weight: 800; color: var(--navy); line-height: 1; }
+.route small { display: block; margin-top: .4rem; font-size: .9rem; font-weight: 600; color: var(--muted); }
+.plane { color: var(--red); font-size: 2rem; }
+.pass-info { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 0; padding: 1.2rem 1.5rem 1.5rem; border-top: 2px dashed var(--line); }
+.pass-info dt { font-size: .85rem; font-weight: 600; color: var(--muted); }
+.pass-info dd { margin: 0; font-weight: 600; }
+
+/* ===== Destinos ===== */
+.filtros { display: flex; flex-wrap: wrap; gap: .6rem; margin: 1.5rem 0 0; }
+.filtros button { padding: .5rem 1.1rem; border: 2px solid var(--navy); border-radius: 999px; background: transparent; color: var(--navy); font-weight: 600; font-size: .95rem; cursor: pointer; }
+.filtros button:hover { background: var(--white); }
+.filtros button.activo { background: var(--navy); color: var(--white); }
+
+.dest-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+.dest { display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.dest[hidden] { display: none; }
+.code { background: var(--navy); color: var(--white); font-size: 3rem; font-weight: 800; letter-spacing: .05em; padding: 1rem 1.25rem; }
+.dest-body { padding: 1.1rem 1.25rem .5rem; flex: 1; }
+.dest h3 { font-size: 1.3rem; }
+.dest p { margin: 0; }
+.dest .season { padding: .8rem 1.25rem; border-top: 1px solid var(--line); font-size: .95rem; color: var(--muted); }
+
+/* ===== Consejos ===== */
+.tips { background: var(--white); }
+.tips-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 3rem; margin-top: 2rem; align-items: start; }
+details { border-bottom: 1px solid var(--line); }
+summary { cursor: pointer; list-style: none; padding: 1rem 2rem 1rem 0; font-weight: 600; color: var(--navy); position: relative; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; position: absolute; right: .25rem; top: .85rem; font-size: 1.5rem; color: var(--red); }
+details[open] summary::after { content: "−"; }
+details p { margin: 0 0 1.2rem; }
+
+.lista { background: var(--sky); border: 1px solid var(--line); border-radius: 10px; padding: 1.5rem; }
+.lista ul { list-style: none; margin: 0 0 1rem; padding: 0; }
+.lista li + li { margin-top: .5rem; }
+.lista label { display: flex; gap: .6rem; align-items: center; cursor: pointer; }
+.lista input { width: 1.15rem; height: 1.15rem; accent-color: var(--red); }
+.lista input:checked + span, .lista label:has(input:checked) { color: var(--muted); text-decoration: line-through; }
+#progreso { margin: 0 0 .5rem; font-weight: 600; }
+.barra { height: .6rem; background: var(--line); border-radius: 999px; overflow: hidden; }
+#relleno { display: block; height: 100%; width: 0; background: var(--red); transition: width .25s; }
+
+/* ===== Acerca de ===== */
+.subtitulo { margin-top: 2.5rem; font-size: 1.4rem; }
+.que-hace { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1.25rem; }
+.que-hace article { background: var(--white); border: 1px solid var(--line); border-top: 4px solid var(--yellow); border-radius: 8px; padding: 1.25rem; }
+.que-hace h4 { font-size: 1.1rem; }
+.que-hace p { margin: 0; }
+
+.linea { list-style: none; margin: 0; padding: 0 0 0 1.5rem; border-left: 3px solid var(--navy); }
+.linea li { position: relative; padding-bottom: 1.4rem; }
+.linea li::before { content: ""; position: absolute; left: -2.05rem; top: .45rem; width: .9rem; height: .9rem; background: var(--red); border-radius: 50%; }
+.linea strong { display: block; color: var(--navy); font-size: 1.2rem; }
+
+.notice { margin-top: 2rem; padding: .9rem 1.1rem; background: var(--white); border-left: 5px solid var(--red); font-weight: 600; }
+
+/* ===== Pie de página ===== */
+.site-footer { background: var(--navy); color: var(--white); padding: 1.5rem 0; font-size: .95rem; }
+.site-footer p { margin: 0; }
+
+/* ===== Celular y tablet ===== */
+@media (max-width: 52rem) {
+  .hero-grid, .tips-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .hero { padding: 3rem 0; }
+  .route { font-size: 2.6rem; }
+  .nav-toggle { display: block; }
+  nav { display: none; width: 100%; }
+  nav.abierto { display: block; }
+  nav ul { flex-direction: column; padding-top: .5rem; }
+}
+.dest[data-pais="España"] .code { background: var(--red); }
+.dest[data-pais="México"] .code { background: #1f7a52; }
+.dest[data-pais="Colombia"] .code { background: #b7791f; }
+/* ===== Cotizador de vuelos ===== */
+.cotizador { display: grid; grid-template-columns: 1.7fr 1fr; gap: 2rem; margin-top: 2rem; align-items: start; }
+.vuelos { list-style: none; margin: 0; padding: 0; display: grid; gap: .75rem; }
+.vuelo { display: grid; grid-template-columns: 1fr auto auto 5.5rem; gap: 1rem; align-items: center; background: var(--white); border: 1px solid var(--line); border-radius: 10px; padding: .9rem 1.1rem; }
+.ruta strong { display: block; font-family: "Archivo", Arial, sans-serif; color: var(--navy); font-size: 1.15rem; }
+.ruta span { font-size: .9rem; color: var(--muted); }
+.precio { font-weight: 600; }
+.cantidad { display: flex; align-items: center; gap: .5rem; }
+.cantidad button { width: 2.2rem; height: 2.2rem; border: 2px solid var(--navy); border-radius: 50%; background: transparent; color: var(--navy); font-size: 1.2rem; font-weight: 800; line-height: 1; cursor: pointer; }
+.cantidad button:hover { background: var(--navy); color: var(--white); }
+.cantidad output { min-width: 1.5rem; text-align: center; font-weight: 800; }
+.subtotal { text-align: right; font-weight: 800; color: var(--navy); }
+
+.resumen { background: var(--navy); color: var(--white); border-radius: 12px; padding: 1.5rem; position: sticky; top: 5.5rem; }
+.resumen h3 { color: var(--white); }
+.resumen p { margin: .3rem 0; }
+.resumen .total { font-family: "Archivo", Arial, sans-serif; font-size: 2.6rem; font-weight: 800; color: var(--yellow); line-height: 1.1; margin: .2rem 0 1rem; }
+.resumen .btn { border: 0; cursor: pointer; font-size: 1rem; }
+
+@media (max-width: 52rem) {
+  .cotizador { grid-template-columns: 1fr; }
+  .vuelo { grid-template-columns: 1fr auto; }
+  .resumen { position: static; }
+}
+/* ===== Mis reservas ===== */
+.tabla-caja { overflow-x: auto; margin-top: 1.5rem; background: var(--white); border: 1px solid var(--line); border-radius: 10px; }
+.tabla-caja table { width: 100%; border-collapse: collapse; min-width: 38rem; }
+.tabla-caja th, .tabla-caja td { padding: .75rem 1rem; text-align: left; border-bottom: 1px solid var(--line); }
+.tabla-caja th { background: var(--navy); color: var(--white); font-family: "Archivo", Arial, sans-serif; font-size: .9rem; }
+.estado { padding: .15rem .65rem; border-radius: 999px; font-size: .85rem; font-weight: 600; }
+.estado.activa { background: #d9f2e3; color: #14663a; }
+.estado.cancelada { background: #fde0e0; color: #9b1c1c; }
+.cancelar { border: 2px solid var(--red); background: transparent; color: var(--red); border-radius: 4px; padding: .25rem .7rem; font-weight: 600; cursor: pointer; }
+.cancelar:hover { background: var(--red); color: var(--white); }
+#sin-reservas, #resumen-reservas { margin: 1rem 0 0; color: var(--muted); font-weight: 600; }
+.acciones { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1rem; }
+.acciones .btn { margin-top: 0; border: 0; cursor: pointer; font-size: 1rem; }
+.btn-sec { padding: .8rem 1.5rem; border: 2px solid var(--navy); background: transparent; color: var(--navy); border-radius: 4px; font-weight: 600; font-family: "Archivo", Arial, sans-serif; font-size: 1rem; cursor: pointer; }
+.resumen .btn.claro { background: transparent; border: 2px solid var(--white); }
+.resumen .btn + .btn { margin-left: .5rem; }
+/* ===== Países y avión ===== */
+.cielo { position: relative; height: 4.5rem; margin: 1.5rem 0; overflow: hidden; border-bottom: 3px dashed var(--line); }
+.avion { position: absolute; bottom: .5rem; width: 6.5rem; animation: volar 9s linear infinite; }
+@keyframes volar { from { left: -7rem; } to { left: 100%; } }
+@media (prefers-reduced-motion: reduce) { .avion { animation: none; left: calc(50% - 3rem); } }
+
+.banderas { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: 1.5rem; }
+.bandera { margin: 0; text-align: center; }
+.bandera svg { width: 100%; max-width: 11rem; border-radius: 8px; border: 1px solid var(--line); box-shadow: 0 6px 14px rgba(18, 48, 77, .15); }
+.bandera figcaption { margin-top: .6rem; font-family: "Archivo", Arial, sans-serif; font-weight: 800; color: var(--navy); }
+.bandera small { display: block; font-family: "Source Serif 4", Georgia, serif; font-weight: 400; color: var(--muted); }
+/* ===== Más decoración ===== */
+
+/* Inicio: puntitos, nube que flota y ola abajo */
+.hero { position: relative; overflow: hidden; background-image: radial-gradient(circle, rgba(11, 85, 99, .14) 1.5px, transparent 1.5px); background-size: 22px 22px; }
+.hero-grid { position: relative; z-index: 1; }
+.hero::before { content: ""; position: absolute; top: 2.5rem; left: -8rem; width: 8rem; height: 2.6rem; background: #fff; border-radius: 999px; box-shadow: 2rem -1rem 0 -.3rem #fff, 4.5rem -.4rem 0 -.2rem #fff; opacity: .85; animation: nube 40s linear infinite; pointer-events: none; }
+@keyframes nube { to { transform: translateX(calc(100vw + 16rem)); } }
+.hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 60px; pointer-events: none; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpath d='M0 30 Q150 0 300 30 T600 30 T900 30 T1200 30 V60 H0 Z' fill='%23ffffff' fill-opacity='.7'/%3E%3C/svg%3E") center / 100% 100% no-repeat; }
+
+/* Botón del inicio con avioncito */
+.hero .btn::after { content: " ✈"; display: inline-block; transition: transform .25s; }
+.hero .btn:hover::after { transform: translateX(5px) rotate(-12deg); }
+
+/* Pase de abordar inclinado */
+.pass { transform: rotate(2deg); transition: transform .3s; }
+.pass:hover { transform: rotate(0); }
+
+/* Barrita de colores bajo cada título */
+h2::after { content: ""; display: block; width: 4.5rem; height: 5px; margin-top: .55rem; border-radius: 3px; background: linear-gradient(90deg, var(--red) 0 33%, var(--yellow) 33% 66%, var(--navy) 66%); }
+
+/* Tarjetas que se levantan */
+.dest, .que-hace article, .vuelo { transition: transform .2s, box-shadow .2s; }
+.dest:hover, .que-hace article:hover, .vuelo:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(18, 48, 77, .16); }
+
+/* Cada país con el color de su bandera */
+.dest[data-pais="España"] .code { background: #c60b1e; }
+.dest[data-pais="México"] .code { background: #006847; }
+.dest[data-pais="Colombia"] .code { background: #003893; }
+
+/* Pie de página con franja amarilla */
+.site-footer { border-top: 6px solid var(--yellow); }
+
+/* Aparecer al hacer scroll */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s, transform .6s; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* Botón para volver arriba */
+.subir { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 20; width: 3rem; height: 3rem; display: grid; place-items: center; background: var(--red); color: var(--white); border-radius: 50%; text-decoration: none; font-size: 1.4rem; box-shadow: 0 8px 18px rgba(0, 0, 0, .25); opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s; }
+.subir.visible { opacity: 1; pointer-events: auto; }
+.subir:hover { transform: translateY(-3px); }
+
+/* Si la persona prefiere menos movimiento, se apagan las animaciones */
+@media (prefers-reduced-motion: reduce) {
+  .hero::before { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .pass, .dest, .que-hace article, .vuelo { transition: none; }
+}
